@@ -1,0 +1,32 @@
+<main class="form-container">
+    <form (submit)="addWord(); $event.preventDefault()" class="vocab-form">
+        <div class="form-row">
+            <label for="word">Word</label>
+            <input placeholder="Word" [(ngModel)]="newWord.word" name="word" required />
+        </div>
+        <div class="form-row">
+            <label for="translation">Translation</label>
+            <input placeholder="Translation" [(ngModel)]="newWord.translation" name="translation" required />
+        </div>
+        <div class="form-row">
+            <label for="example">Example Sentence</label>
+            <input placeholder="Example" [(ngModel)]="newWord.example" name="example" />
+        </div>
+        <div class="form-row">
+            <label for="category">Category</label>
+            <input placeholder="Category" [(ngModel)]="newWord.category" name="category" />
+        </div>
+        <div class="form-row">
+            <label for="language">Language</label>
+            <select placeholder="Language" [(ngModel)]="newWord.language" name="language">
+                <option *ngFor="let lang of languagesList" class="item-name"> {{ lang.name }} </option>
+            </select>
+        </div>
+        <div class="form-buttons">
+            <button type="submit" [disabled]="!newWord.word || !newWord.translation">
+                {{ editingWordId ? 'Update Word' : 'Add Word' }}
+            </button>
+            <button *ngIf="editingWordId" (click)="cancelEdit()" type="button">Cancel</button>
+        </div>
+    </form>
+</main>

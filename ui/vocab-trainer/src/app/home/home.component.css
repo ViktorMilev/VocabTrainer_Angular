@@ -1,0 +1,30 @@
+/* Vocabulary list display */
+.tasks-display-list {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.tasks-display-list .list-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  color: var(--color-tertiary);
+  font-weight: bold;
+}
+
+.tasks-display-list .item-name,
+.tasks-display-list .item-buttons {
+  flex: 1;
+}
+
+.tasks-display-list .item-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.tasks-display-list .list-item:not(:last-child) {
+  border-bottom: 1px solid var(--color-tertiary);
+}

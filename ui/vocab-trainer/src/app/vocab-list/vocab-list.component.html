@@ -1,0 +1,14 @@
+<main>
+    <ul class="tasks-display-list">
+        <li *ngFor="let v of vocabList" class="list-item">
+            <div class="item-name">
+                <b>{{ v.word }}</b> - {{ v.translation }}
+                <small *ngIf="v.example"> {{ v.example }} </small>
+            </div>
+            <div class="item-buttons">
+                <button (click)="startEdit(v)">Edit</button>
+                <button type="button" (click)="deleteWord(v.id)">Delete</button>
+            </div>
+        </li>
+    </ul>
+</main>

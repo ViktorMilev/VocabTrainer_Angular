@@ -1,0 +1,212 @@
+:root {
+    /* Color palette */
+    --color-primary: #7C3AED;
+    --color-secondary: #EDE9FE;
+    --color-tertiary: #4C1D95;
+    --white: #FFFFFF;
+    --black: #000000;
+    --black: #404040;
+    --black: #808080;
+    --black: #c0c0c0;
+    --red: #FF0000;
+    --yellow: #ffff07;
+    --green: #2efb2e;
+    --cyan: #21f1f1;
+    --blue: #0000ff;
+    --indigo: #6a5acd;
+    --magenta: #e97de9;
+    --pink: #ff7aaf;
+    --light-bg: #FAF5FF;
+
+    font-family: "Segoe UI", Tahoma, 'Segoe UI', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--light-bg);
+}
+
+/* For almost all button types */
+button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #6D28D9; /* darker variant */
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* For arrow buttons */
+.small-button {
+ margin: 0;
+}
+
+/* Input form */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+form input {
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid var(--indigo);
+  padding-left: 8px;
+  background-color: var(--color-secondary);
+}
+
+form input:focus-visible {
+  outline: none;
+  color: #2c1056;
+}
+
+form input::placeholder {
+  color: var(--color-tertiary);
+}
+
+form select {
+  width: 250px;
+  height: 34px;
+  border-radius: 5px;
+  border: 1px solid var(--indigo);
+  padding-left: 8px;
+  background-color: var(--color-secondary);
+  outline: none;
+}
+
+.form-container {
+  max-width: 400px;       
+  margin: 0 auto;     
+  padding: 20px;
+}
+
+.vocab-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;              
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column; 
+}
+
+.form-row label {
+  margin-bottom: 5px;     
+  font-weight: bold;
+}
+
+.form-row input,
+.form-row select {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;  
+  gap: 10px;  
+  margin-top: 10px;
+}
+
+.form-buttons button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  transition: background-color 0.2s ease;
+}
+
+.form-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.form-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--color-tertiary), #9dc9ff);
+}
+
+header h1 {
+  margin: 0;
+  padding: 20px 0;
+  color: var(--white); 
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: 0px 2px 6px rgb(0 0 0 / 60%);
+}
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: #4C1D95;
+  padding: 3px 0;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 20px;
+  color: var(--white);
+  text-decoration: none;
+  /*text-transform: uppercase;
+  font-weight: bold;*/
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+nav a:not(:last-child) {
+  border-right: solid 1.5px var(--white);
+}
+
+nav a:hover {
+  transform: scale(1.05);
+}
+
+
+
+/* Main layout */
+main {
+  margin: 35px;
+  min-height: 100vh;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-secondary);
+  padding: 15px;
+  font-size: 14px;
+  color: #333;
+}

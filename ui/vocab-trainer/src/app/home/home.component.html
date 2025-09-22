@@ -1,0 +1,22 @@
+<main>
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search by word or translation" />
+
+  <ng-container *ngIf="searchTerm.length <= 0">
+    <span>Any word you wish to translate..&#63;</span>
+  </ng-container>
+  <ng-container *ngIf="searchTerm && searchTerm.length > 0">
+    <li *ngFor="let v of filteredVocabList">
+      <div class="item-name">
+        <b>{{ v.word }}</b> - {{ v.translation }}
+        <small *ngIf="v.example"> {{ v.example }} </small>
+      </div>
+      <div class="item-buttons">
+        <button (click)="startEdit(v)">Edit</button>
+        <button type="button" (click)="deleteWord(v.id)">Delete</button>
+      </div>
+    </li>
+    <li *ngIf="filteredVocabList.length === 0">
+      <em>No results found.</em>
+    </li>
+  </ng-container>
+</main>

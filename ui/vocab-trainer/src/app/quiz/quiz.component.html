@@ -1,0 +1,11 @@
+<div *ngIf="currentWord; else noMoreQuestions" class="quiz-container">
+    <p><b>Word:</b> {{ currentWord.word }}</p>
+    <p *ngIf="currentWord.example"><i>Example:</i> {{ currentWord.example }}</p>
+    <input type="text" [(ngModel)]="userAnswer" placeholder="Your translation" />
+    <button (click)="submitQuizAnswer()">Submit</button>
+    <p>Question {{ currentIndex + 1 }} of 10</p>
+</div>
+
+<ng-template #noMoreQuestions>
+    <p>Quiz finished! 🎉</p>
+</ng-template>
